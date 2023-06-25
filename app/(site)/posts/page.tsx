@@ -33,7 +33,7 @@ const query = groq`*[_type=="post"]{
 export default async function PostArchive(props: Props) {
 
     const posts: any = await client.fetch(query)
-    const allClasses: string[] = posts.map(post => post.categories).flat()
+    const allClasses: string[] = posts.map((post:any) => post.categories).flat()
     const tagSet: string[] = [...new Set(allClasses)]
 
 
@@ -79,14 +79,14 @@ export default async function PostArchive(props: Props) {
                         }
                         <Grid container spacing={2} >
 
-                            {!props.searchParams?.search && posts.map((post) => (
+                            {!props.searchParams?.search && posts.map((post:any) => (
                                 <>
                                     <Grid item xs={6} md={3} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
                                         <BlogPostCard title={post.title} mainImage={post.mainImage} publishedAt={post.publishedAt} auth={post.auth} hashTags={post.hashTags} categories={post.categories} />
                                     </Grid>
                                 </>
                             ))}
-                            {props.searchParams?.search && posts.filter((post) => (post.categories.includes(props.searchParams?.search))).map((post) => (
+                            {props.searchParams?.search && posts.filter((post:any) => (post.categories.includes(props.searchParams?.search))).map((post:any) => (
                                 <>
                                     <Grid item xs={6} md={3} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
                                         <BlogPostCard title={post.title} mainImage={post.mainImage} publishedAt={post.publishedAt} auth={post.auth} hashTags={post.hashTags} categories={post.categories} />
