@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'license',
-  title: '教練證照',
+  name: 'videoHashTag',
+  title: '影片hashtag',
   type: 'document',
   fields: [
     defineField({

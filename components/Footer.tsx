@@ -31,7 +31,7 @@ export default function Footer() {
                         </Link>
                     </IconButton>
                 </Box>
-                <Typography gutterBottom variant="h5" component="div" sx={{ display: "flex", justifyContent: "center" }}>
+                <Typography gutterBottom variant="subtitle1" component="div" sx={{ display: "flex", justifyContent: "center" }}>
                     Copyright © {new Date().getFullYear()} weightliftingcollege. All rights reserved.
                 </Typography>
             </Container>

@@ -31,7 +31,8 @@ export default function Header() {
         setAnchorElNav(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (url:string) => {
+        window.location.href = url;
         setAnchorElNav(null);
     };
 
@@ -70,7 +71,7 @@ export default function Header() {
                                     }}
                                 >
                                     {pages.map((page) => (
-                                        <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                        <MenuItem key={page.name} onClick={()=>handleCloseNavMenu(page.url)}>
                                             <Typography textAlign="center">{page.name}</Typography>
                                         </MenuItem>
                                     ))}
@@ -78,15 +79,15 @@ export default function Header() {
                             </Box>
                             <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, justifyContent: "space-around", alignItems: "center", width: "80%" }}>
                                 {pages.map((page) => (
-                                    <Link key={page.name} href={page.url}>
                                         <Button
+                                            href={page.url}
+                                            key={page.name}
                                             sx={{ my: 2, color: 'white', display: 'block', fontSize: "17px", "&:hover": { color: "#c9a063" } }}
                                         >
 
                                             {page.name}
 
                                         </Button>
-                                    </Link>
                                 ))}
                             </Box>
                             <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end", alignItems: "center", width: "20%" }}>
