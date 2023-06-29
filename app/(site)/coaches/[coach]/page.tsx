@@ -19,7 +19,7 @@ type Props = {
 }
 
 export default async function Coach({ params }: Props) {
-    const slug = params.coach
+    const slug = decodeURI(params.coach)
     const query = `*[_type=="author" && name=="${slug}"][0]{...,skill[]->,experience[]->,license[]->,prize[]->}{
         author,
         name,
@@ -41,7 +41,7 @@ export default async function Coach({ params }: Props) {
         }
     }`
     const coach: any = await client.fetch(query)
-    console.log(coach)
+    console.log(slug)
     return (
         <>
             <div style={{ backgroundColor: "black" }}>

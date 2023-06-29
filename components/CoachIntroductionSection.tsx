@@ -29,7 +29,7 @@ export default async function CoachIntroductionSection() {
                     <Grid container spacing={2} sx={{justifyContent: "center" }}>
                         {coaches.map((coach: any) => (
                             <>
-                                <Grid item xs={6} md={3} sx={{ maxWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                                <Grid key={coach.name} item xs={6} md={3} sx={{ maxWidth: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
                                     <CoachIntroductionCard name={coach.name} mainImage={coach.mainImage} fbUrl={coach.fbUrl} igUrl={coach.igUrl} />
                                 </Grid>
                             </>
