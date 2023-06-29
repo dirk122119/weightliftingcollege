@@ -19,7 +19,7 @@ export default function VideoPostCard(props: any) {
         <ThemeProvider theme={muiTheme}>
             <Card sx={{ minWidth: 120, margin: "10px",width:"100%" }}>
                 <CardActionArea>
-                <Link href={`${url}`} target="_blank" key={title} style={{ display: "flex", justifyContent: "center" }}> 
+                <Link href={url} target="_blank" key={title} style={{ display: "flex", justifyContent: "center" }}> 
                     <CardMedia
                         component="img"
                         width="200"

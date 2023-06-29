@@ -8,7 +8,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '@/style/muiTheme';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
-import VideoPostCard from "@/components/VideoDirPostCard"
+import VideoDirPostCard from "@/components/VideoDirPostCard"
 
 type Props = {
     params?: {
@@ -80,14 +80,14 @@ export default async function VideoDirArchive(props: Props) {
                             {!props.searchParams?.search && videoDirs.map((videoDir:any) => (
                                 <>
                                     <Grid item xs={6} md={3} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                                        <VideoPostCard title={videoDir.title} mainImage={videoDir.mainImage} hashTags={videoDir.hashTags} categories={videoDir.categories} />
+                                        <VideoDirPostCard title={videoDir.title} mainImage={videoDir.mainImage} hashTags={videoDir.hashTags} categories={videoDir.categories} />
                                     </Grid>
                                 </>
                             ))}
                             {props.searchParams?.search && videoDirs.filter((videoDir:any) => (videoDir.categories.includes(props.searchParams?.search))).map((videoDir:any) => (
                                 <>
                                     <Grid item xs={6} md={3} sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-                                        <VideoPostCard title={videoDir.title} mainImage={videoDir.mainImage} hashTags={videoDir.hashTags} categories={videoDir.categories} />
+                                        <VideoDirPostCard title={videoDir.title} mainImage={videoDir.mainImage} hashTags={videoDir.hashTags} categories={videoDir.categories} />
                                     </Grid>
                                 </>
                             ))}

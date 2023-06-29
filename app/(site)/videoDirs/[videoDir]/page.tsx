@@ -10,7 +10,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import muiTheme from '@/style/muiTheme';
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
-import VideoPostCard from "@/components/VideoDirPostCard"
+import VideoPostCard from "@/components/VideoPostCard"
 
 type Props = {
     params: { videoDir: string };
