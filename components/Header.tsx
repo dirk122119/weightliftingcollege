@@ -48,7 +48,7 @@ export default function Header() {
                                     aria-controls="menu-appbar"
                                     aria-haspopup="true"
                                     onClick={handleOpenNavMenu}
-                                    sx={{ color: "white" }}
+                                    sx={{ color: "white",cursor: "pointer" }}
                                 >
                                     <MenuIcon />
                                 </IconButton>

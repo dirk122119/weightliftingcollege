@@ -39,7 +39,7 @@ export default async function PostArchive(props: Props) {
 
     return (
         <ThemeProvider theme={muiTheme}>
-            <div style={{ display: "flex", justifyContent: "center", backgroundColor: "white", width: "100vw",height:"100vh" }}>
+            <div style={{ display: "flex", justifyContent: "center", backgroundColor: "white", width: "100vw",height:"100%" }}>
                 <Container maxWidth="xl">
                     <Box sx={{ flexGrow: 1, padding: "20px" }}>
                         <Chip
